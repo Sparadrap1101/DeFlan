@@ -18,8 +18,8 @@ export default async function ipfs(fileName, maker, model, year, color, token) {
 
   const nft = {
     image: picture,
-    name: "DeFlan RWA car twin",
-    description: "This is the real world asset's NFT connected to the owner's car thanks to DeFlan",
+    name: "X-Auto RWA car twin",
+    description: "This is the real world asset's NFT connected to the owner's car thanks to X-Auto",
     properties: {
         maker: maker, 
         model: model, 
