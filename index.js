@@ -32,7 +32,7 @@ app.post("/api/v1/mint", multerFile.array("my-file"),  async (req, res) => {
     let hash, tokenID, metadatas, img;
 
     try {
-        [hash, tokenID, metadatas, img] = await mintCar(fileName, req.query.maker, req.query.model, req.query.year, req.query.color);
+        [hash, tokenID, metadatas, img] = await mintCar(fileName, req.query.maker, req.query.model, req.query.year, req.query.color, req.query.token);
     } catch (error) {
         console.error(error);
     }

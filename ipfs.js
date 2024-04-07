@@ -11,7 +11,7 @@ async function fileFromPath(filePath) {
     return new File([content], path.basename(filePath), { type })
 }
 
-export default async function ipfs(fileName, maker, model, year, color) {
+export default async function ipfs(fileName, maker, model, year, color, token) {
   const NFT_STORAGE_API_KEY = process.env.NFT_STORAGE_API_KEY;
 
   const picture = await fileFromPath(`img/${fileName}`)
@@ -24,7 +24,8 @@ export default async function ipfs(fileName, maker, model, year, color) {
         maker: maker, 
         model: model, 
         year: year, 
-        color: color
+        color: color,
+        token: token
     }
   };
 

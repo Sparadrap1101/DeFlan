@@ -19,8 +19,8 @@ const getXrplClient = () => {
 
 const Wallet1 = Wallet.fromSeed(process.env.XRPL_WALLET_SEED);
 
-export default async function mintToken(fileName, maker, model, year, color) {
-    const [metadatas, img] = await ipfs(fileName, maker, model, year, color);
+export default async function mintToken(fileName, maker, model, year, color, token) {
+    const [metadatas, img] = await ipfs(fileName, maker, model, year, color, token);
 
     const ipfsURL = metadatas.url;
 
