@@ -44,7 +44,7 @@ app.post("/api/v1/scrap", async (req, res) => {
     let url;
 
     try {
-        url = await executePython("./***.py", [req.query.url]);
+        url = await executePython("./scrapping.py", [req.query.url]);
     } catch (error) {
         console.error(error);
     }
@@ -60,12 +60,10 @@ const executePython = async (script, args) => {
     const result = await new Promise((resolve, reject) => {
         let output;
 
-        // Get output from python script
         py.stdout.on("data", (data) => {
         output = JSON.parse(data);
         });
 
-        // Handle erros
         py.stderr.on("data", (data) => {
         console.error(`[python] Error occured: ${data}`);
         reject(`Error occured in ${script}`);
